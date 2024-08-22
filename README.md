@@ -11,9 +11,27 @@ This repository contains the source code of my presentation at [.NET Day Switzer
 
 ## Getting Started
 
-1. Clone the repository
-2. Open the solution in Visual Studio or Visual Studio Code
-3. Run the tests
+### Prerequisites
+
+- [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/)
+- .NET 8 SDK
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- Azure tenant with permissions to create app registrations
+
+### Running the Application / Tests
+
+1. Clone this GitHub repository
+1. Open the solution (`src\ArbitraryApp.sln`) in Visual Studio or Visual Studio Code
+1. Create app registration in azure tenant (see [here](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app))
+1. Update the `appsettings.json` file in the `ArbitraryApp.Server` project with the app registration details
+
+   IMPORTANT: store `ClientSecret` in managed user secrets
+
+1. Run the application (`ArbitraryApp.Server`) / the tests (`ArbitraryApp.IntegrationTests`) in Visual Studio or Visual Studio Code
+
+## Credits
+
+- [Blazor.BFF.AzureAD.Template](https://github.com/damienbod/Blazor.BFF.AzureAD.Template)
 
 ## Useful Links
 
