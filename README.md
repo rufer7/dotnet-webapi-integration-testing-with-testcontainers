@@ -1,5 +1,7 @@
 # dotnet-webapi-integration-testing-with-testcontainers
 
+## About
+
 This repository contains the source code of my presentation at [.NET Day Switzerland 2024](https://sessionize.com/app/speaker/session/674028).
 
 - **Title**: Mastering Integration Testing for .NET Web APIs with WebApplicationFactory and TestContainers
