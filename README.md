@@ -18,16 +18,23 @@ This repository contains the source code of my presentation at [.NET Day Switzer
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - Azure tenant with permissions to create app registrations
 
-### Running the Application / Tests
+### Run the Application locally
 
 1. Clone this GitHub repository
 1. Open the solution (`src\ArbitraryApp.sln`) in Visual Studio or Visual Studio Code
 1. Create app registration in azure tenant (see [here](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app))
 1. Update the `appsettings.json` file in the `ArbitraryApp.Server` project with the app registration details
 
-   IMPORTANT: store `ClientSecret` in managed user secrets
+   **IMPORTANT:** store `ClientSecret` in managed user secrets
 
-1. Run the application (`ArbitraryApp.Server`) / the tests (`ArbitraryApp.IntegrationTests`) in Visual Studio or Visual Studio Code
+1. Set the `ArbitraryApp.Server` project as startup project
+1. Launch profile `ArbitraryApp.Server`
+
+### Run the Tests and Integration Tests locally
+
+1. Start `Docker Desktop`
+1. Open the solution (`src\ArbitraryApp.sln`) in Visual Studio or Visual Studio Code
+1. Run all tests in the solution
 
 ## Credits
 
