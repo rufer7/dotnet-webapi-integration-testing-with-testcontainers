@@ -1,11 +1,19 @@
 # dotnet-webapi-integration-testing-with-testcontainers
 
+[![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/rufer7/dotnet-webapi-integration-testing-with-testcontainers/blob/main/LICENSE)
+
 ## About
 
 This repository contains the source code of my presentation at [.NET Day Switzerland 2024](https://sessionize.com/app/speaker/session/674028).
 
 - **Title**: Mastering Integration Testing for .NET Web APIs with WebApplicationFactory and TestContainers
 - **Teaser**: Reduce the fear of making changes to the code to a minimum and at the same time detect bugs early in the development process. This can be achieved by implementing integration tests. With the help of the WebApplicationFactory and the use of the Testcontainers library, .NET Web APIs including common 3rd party dependencies like SQL database, Redis cache and many more can be tested end-to-end and including authorization. In this session you will learn how to do this.
+
+## Getting Started
+
+1. Clone the repository
+2. Open the solution in Visual Studio or Visual Studio Code
+3. Run the tests
 
 ## Useful Links
 
