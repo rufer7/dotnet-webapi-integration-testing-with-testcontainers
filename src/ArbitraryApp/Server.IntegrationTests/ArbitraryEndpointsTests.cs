@@ -46,7 +46,7 @@ public class ArbitraryEndpointsTests
 
         var records = await response.Content.ReadFromJsonAsync<IEnumerable<string>>();
         Assert.NotNull(records);
-        Assert.Equal(1, records.Count());
+        Assert.Single(records);
     }
 
     [Fact]
