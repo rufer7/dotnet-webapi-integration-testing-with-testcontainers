@@ -10,6 +10,8 @@ namespace ArbitraryApp.Server.Controllers;
 [Route("api/[controller]")]
 public class AccountController : ControllerBase
 {
+    private static readonly char[] TrimChars = new[] { '"' };
+
     [HttpGet("Login")]
     public ActionResult Login(string? returnUrl, string? claimsChallenge)
     {
@@ -23,7 +25,7 @@ public class AccountController : ControllerBase
             return Challenge(properties);
         }
         var jsonString = claimsChallenge.Replace("\\", "")
-            .Trim(new[] { '"' });
+            .Trim(TrimChars);
 
         properties.Items["claims"] = jsonString;
 
