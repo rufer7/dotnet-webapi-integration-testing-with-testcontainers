@@ -22,10 +22,12 @@ var env = builder.Environment;
 services.AddScoped<MsGraphService>();
 services.AddScoped<CaeClaimsChallengeService>();
 
+// Entity Framework Core DbContext configuration
 services.AddDbContext<ApplicationDbContext>(
     options => options.UseSqlServer(configuration.GetConnectionString("Database"),
         sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
+// Add Antiforgery services
 services.AddAntiforgery(options =>
 {
     options.HeaderName = "X-XSRF-TOKEN";
@@ -37,6 +39,7 @@ services.AddAntiforgery(options =>
 services.AddHttpClient();
 services.AddOptions();
 
+// Authentication and authorization
 var scopes = configuration.GetValue<string>("DownstreamApi:Scopes");
 string[] initialScopes = scopes!.Split(' ');
 
@@ -62,7 +65,8 @@ services.AddRazorPages().AddMvcOptions(options =>
 
 var app = builder.Build();
 
-// This approach is not recommended to use in production
+// Ensure the database is created
+// NOTE: this approach is not recommended to use in production
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
@@ -100,3 +104,11 @@ app.MapNotFound("/api/{**segment}");
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+
+/// <summary>
+/// Expose implicitly defined Program class to the integration test project
+/// See https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-7.0#basic-tests-with-the-default-webapplicationfactory
+/// </summary>
+#pragma warning disable S1118 // Utility classes should not have public constructors
+public partial class Program { }
+#pragma warning restore S1118 // Utility classes should not have public constructors
