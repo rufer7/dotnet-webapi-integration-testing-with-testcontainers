@@ -11,11 +11,11 @@ namespace ArbitraryApp.Server.Controllers;
 [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
 [ApiController]
 [Route("api/[controller]")]
-public class DirectApiController : ControllerBase
+public class ArbitraryController : ControllerBase
 {
     private readonly ApplicationDbContext _dbContext;
 
-    public DirectApiController(ApplicationDbContext dbContext)
+    public ArbitraryController(ApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }
