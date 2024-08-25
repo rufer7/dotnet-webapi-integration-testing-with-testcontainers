@@ -29,6 +29,7 @@ public class DirectApiController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = AuthorizationPolicies.AssignmentToAdminRoleRequired)]
     public async Task Post([FromBody] ArbitraryRecordRequestModel request)
     {
         var record = new ArbitraryRecord
