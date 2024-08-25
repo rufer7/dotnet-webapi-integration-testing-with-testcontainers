@@ -1,7 +1,7 @@
-﻿using System.Net.Http.Headers;
-using System.Net;
+﻿using System.Net;
+using System.Net.Http.Headers;
 
-namespace ArbitraryApp.Server;
+namespace ArbitraryApp.Server.Cae;
 
 /// <summary>
 /// This exception class is used to pass HTTP CAE unauthorized responses from a Httpclient and 

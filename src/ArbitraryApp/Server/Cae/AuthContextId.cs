@@ -1,7 +1,7 @@
-﻿namespace ArbitraryApp.Server;
+﻿namespace ArbitraryApp.Server.Cae;
 
 /// <summary>
-/// Consts used for the defined AuthContext. The AuthContext can be created using MS Graph.
+/// Constants used for the defined AuthContext. The AuthContext can be created using MS Graph.
 /// the values can then be used in CAE policies.
 /// </summary>
 public static class AuthContextId

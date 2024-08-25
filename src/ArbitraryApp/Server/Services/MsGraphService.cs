@@ -24,22 +24,21 @@ public class MsGraphService
     {
         try
         {
-            var photo = string.Empty;
             byte[] photoByte;
             var streamPhoto = new MemoryStream();
 
             // Get user photo
-            using (var photoStream = await _graphServiceClient
-                .Me
-                .Photo
-                .Content
-                .GetAsync(b => b.Options.WithScopes("User.ReadBasic.All", "user.read")))
+            await using (var photoStream = await _graphServiceClient
+                             .Me
+                             .Photo
+                             .Content
+                             .GetAsync(b => b.Options.WithScopes("User.ReadBasic.All", "user.read")))
             {
-                photoStream!.CopyTo(streamPhoto);
-                photoByte = streamPhoto!.ToArray();
+                await photoStream!.CopyToAsync(streamPhoto);
+                photoByte = streamPhoto.ToArray();
             }
 
-            photo = Base64UrlEncoder.Encode(photoByte);
+            var photo = Base64UrlEncoder.Encode(photoByte);
 
             return photo;
         }
@@ -49,4 +48,3 @@ public class MsGraphService
         }
     }
 }
-

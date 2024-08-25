@@ -1,4 +1,4 @@
-﻿namespace ArbitraryApp.Server;
+﻿namespace ArbitraryApp.Server.Cae;
 
 /// <summary>
 /// Claims challenges, claims requests, and client capabilities
@@ -12,7 +12,7 @@
 /// </summary>
 public class CaeClaimsChallengeService
 {
-    public string? CheckForRequiredAuthContextIdToken(string authContextId, HttpContext context)
+    public string? CheckForRequiredAuthContextIdToken(string? authContextId, HttpContext context)
     {
         if (!string.IsNullOrEmpty(authContextId))
         {

@@ -55,7 +55,7 @@ public static class SecurityHeadersDefinitions
         if (!isDev)
         {
             // maxage = one year in seconds
-            policy.AddStrictTransportSecurityMaxAgeIncludeSubDomains();
+            policy.AddStrictTransportSecurityMaxAgeIncludeSubDomainsAndPreload();
         }
 
         policy.ApplyDocumentHeadersToAllResponses();
