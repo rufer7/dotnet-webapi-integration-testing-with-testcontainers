@@ -8,7 +8,7 @@ namespace ArbitraryApp.Server.Controllers;
 
 [ValidateAntiForgeryToken]
 [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
-[AuthorizeForScopes(Scopes = new string[] { "User.ReadBasic.All user.read" })]
+[AuthorizeForScopes(Scopes = new[] { "User.ReadBasic.All user.read" })]
 [ApiController]
 [Route("api/[controller]")]
 public class GraphApiCallsController : ControllerBase

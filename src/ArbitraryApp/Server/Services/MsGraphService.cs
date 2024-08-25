@@ -19,32 +19,4 @@ public class MsGraphService
         return await _graphServiceClient.Me
             .GetAsync(b => b.Options.WithScopes("User.ReadBasic.All", "user.read"));
     }
-
-    public async Task<string> GetGraphApiProfilePhoto()
-    {
-        try
-        {
-            byte[] photoByte;
-            var streamPhoto = new MemoryStream();
-
-            // Get user photo
-            await using (var photoStream = await _graphServiceClient
-                             .Me
-                             .Photo
-                             .Content
-                             .GetAsync(b => b.Options.WithScopes("User.ReadBasic.All", "user.read")))
-            {
-                await photoStream!.CopyToAsync(streamPhoto);
-                photoByte = streamPhoto.ToArray();
-            }
-
-            var photo = Base64UrlEncoder.Encode(photoByte);
-
-            return photo;
-        }
-        catch
-        {
-            return string.Empty;
-        }
-    }
 }
