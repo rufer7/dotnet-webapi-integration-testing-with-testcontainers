@@ -1,5 +1,7 @@
 ﻿using ArbitraryApp.Server;
+using ArbitraryApp.Server.Cae;
 using ArbitraryApp.Server.Services;
+using ArbitraryApp.Shared.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
@@ -36,6 +38,10 @@ services.AddMicrosoftIdentityWebAppAuthentication(configuration)
     .EnableTokenAcquisitionToCallDownstreamApi(initialScopes)
     .AddMicrosoftGraph("https://graph.microsoft.com/v1.0", initialScopes)
     .AddInMemoryTokenCaches();
+
+services.AddAuthorizationBuilder()
+    .AddPolicy(AuthorizationPolicies.AssignmentToAdminRoleRequired,
+        policy => policy.RequireRole(Roles.Admin));
 
 services.AddControllersWithViews(options =>
     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()));
