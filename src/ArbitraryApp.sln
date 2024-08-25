@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArbitraryApp.Shared", "Arbi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArbitraryApp.Client", "ArbitraryApp\Client\ArbitraryApp.Client.csproj", "{6C38CFBC-2196-4E87-8823-7600FE2B2E06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitraryApp.Server.Tests", "ArbitraryApp.Server.Tests\ArbitraryApp.Server.Tests.csproj", "{E43E61E9-3B7D-4E41-AD08-252B582D84E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitraryApp.Server.Tests", "ArbitraryApp\Server.Tests\ArbitraryApp.Server.Tests.csproj", "{E43E61E9-3B7D-4E41-AD08-252B582D84E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitraryApp.Server.IntegrationTests", "ArbitraryApp.Server.IntegrationTests\ArbitraryApp.Server.IntegrationTests.csproj", "{A4B3B7E1-9385-4266-A8D9-4390907F7877}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitraryApp.Server.IntegrationTests", "ArbitraryApp\Server.IntegrationTests\ArbitraryApp.Server.IntegrationTests.csproj", "{A4B3B7E1-9385-4266-A8D9-4390907F7877}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitraryApp.Domain", "ArbitraryApp.Domain\ArbitraryApp.Domain.csproj", "{7A01A641-B417-4B30-AFF1-DAC68779FF05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArbitraryApp.Domain", "ArbitraryApp\Domain\ArbitraryApp.Domain.csproj", "{7A01A641-B417-4B30-AFF1-DAC68779FF05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

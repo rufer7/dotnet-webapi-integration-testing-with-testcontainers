@@ -8,8 +8,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\ArbitraryApp.Domain\ArbitraryApp.Domain.csproj" />
 		<ProjectReference Include="..\Client\ArbitraryApp.Client.csproj" />
+		<ProjectReference Include="..\Domain\ArbitraryApp.Domain.csproj" />
 		<ProjectReference Include="..\Shared\ArbitraryApp.Shared.csproj" />
 	</ItemGroup>
 

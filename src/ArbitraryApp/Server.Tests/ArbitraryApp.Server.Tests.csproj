@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ArbitraryApp\Server\ArbitraryApp.Server.csproj" />
+    <ProjectReference Include="..\Server\ArbitraryApp.Server.csproj" />
   </ItemGroup>
 
   <ItemGroup>
