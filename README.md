@@ -1,5 +1,6 @@
 # dotnet-webapi-integration-testing-with-testcontainers
 
+[![.NET](https://github.com/rufer7/dotnet-webapi-integration-testing-with-testcontainers/actions/workflows/dotnet.yml/badge.svg)](https://github.com/rufer7/dotnet-webapi-integration-testing-with-testcontainers/actions/workflows/dotnet.yml)
 [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/rufer7/dotnet-webapi-integration-testing-with-testcontainers/blob/main/LICENSE)
 
 ## About
