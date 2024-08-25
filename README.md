@@ -48,6 +48,12 @@ dotnet run --project .\src\ArbitraryApp\Server\ArbitraryApp.Server.csproj
 1. Open the solution (`src\ArbitraryApp.sln`) in Visual Studio or Visual Studio Code
 1. Run all tests in the solution
 
+#### Terminal Commands
+
+```bash
+dotnet test .\src\ArbitraryApp.sln
+```
+
 ## Credits
 
 - [Blazor.BFF.AzureAD.Template](https://github.com/damienbod/Blazor.BFF.AzureAD.Template)
