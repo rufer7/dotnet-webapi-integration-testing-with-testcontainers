@@ -18,13 +18,14 @@ public class AccountController : ControllerBase
 
         var properties = GetAuthProperties(returnUrl);
 
-        if(claimsChallenge != null)
+        if (claimsChallenge == null)
         {
-            string jsonString = claimsChallenge.Replace("\\", "")
-                .Trim(new char[1] { '"' });
-
-            properties.Items["claims"] = jsonString;
+            return Challenge(properties);
         }
+        var jsonString = claimsChallenge.Replace("\\", "")
+            .Trim(new[] { '"' });
+
+        properties.Items["claims"] = jsonString;
 
         return Challenge(properties);
     }
