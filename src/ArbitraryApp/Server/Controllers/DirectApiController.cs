@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using ArbitraryApp.Domain;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ArbitraryApp.Server.Controllers;
 
@@ -10,9 +12,18 @@ namespace ArbitraryApp.Server.Controllers;
 [Route("api/[controller]")]
 public class DirectApiController : ControllerBase
 {
-    [HttpGet]
-    public IEnumerable<string> Get()
+    private readonly ApplicationDbContext _dbContext;
+
+    public DirectApiController(ApplicationDbContext dbContext)
     {
-        return new List<string> { "some data", "more data", "loads of data" };
+        _dbContext = dbContext;
+    }
+
+    [HttpGet]
+    public async Task<IEnumerable<string>> Get()
+    {
+        var records = await _dbContext.ArbitraryRecords.ToListAsync();
+
+        return records.Select(r => r.Value);
     }
 }

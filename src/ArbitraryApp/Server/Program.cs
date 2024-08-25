@@ -1,10 +1,13 @@
-﻿using ArbitraryApp.Server;
+﻿using ArbitraryApp.Domain;
+using ArbitraryApp.Server;
 using ArbitraryApp.Server.Cae;
 using ArbitraryApp.Server.Services;
 using ArbitraryApp.Shared.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
+using static System.Formats.Asn1.AsnWriter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,10 @@ var env = builder.Environment;
 
 services.AddScoped<MsGraphService>();
 services.AddScoped<CaeClaimsChallengeService>();
+
+services.AddDbContext<ApplicationDbContext>(
+    options => options.UseSqlServer(configuration.GetConnectionString("Database"),
+        sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
 services.AddAntiforgery(options =>
 {
@@ -55,6 +62,13 @@ services.AddRazorPages().AddMvcOptions(options =>
 }).AddMicrosoftIdentityUI();
 
 var app = builder.Build();
+
+// This approach is not recommended to use in production
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await db.Database.EnsureCreatedAsync();
+}
 
 if (env.IsDevelopment())
 {
