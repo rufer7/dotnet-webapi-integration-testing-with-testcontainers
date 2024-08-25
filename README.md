@@ -35,6 +35,13 @@ This repository contains the source code of my presentation at [.NET Day Switzer
 1. Set the `ArbitraryApp.Server` project as startup project
 1. Launch profile `ArbitraryApp.Server`
 
+#### Terminal Commands
+
+```bash
+dotnet build .\src\ArbitraryApp.sln
+dotnet run --project .\src\ArbitraryApp\Server\ArbitraryApp.Server.csproj
+```
+
 ### Run the Tests and Integration Tests locally
 
 1. Start `Docker Desktop`
