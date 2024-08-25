@@ -67,11 +67,9 @@ var app = builder.Build();
 
 // Ensure the database is created
 // NOTE: this approach is not recommended to use in production
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    await db.Database.EnsureCreatedAsync();
-}
+await using var scope = app.Services.CreateAsyncScope();
+var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+await db.Database.EnsureCreatedAsync();
 
 if (env.IsDevelopment())
 {
