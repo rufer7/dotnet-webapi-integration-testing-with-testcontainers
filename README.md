@@ -57,6 +57,7 @@ dotnet test .\src\ArbitraryApp.sln
 ## Credits
 
 - [Blazor.BFF.AzureAD.Template](https://github.com/damienbod/Blazor.BFF.AzureAD.Template)
+- [Eli Weinstock-Herman](https://www.tiernok.com/posts/2021/mocking-oidc-logins-for-integration-tests/)
 
 ## Useful Links
 
