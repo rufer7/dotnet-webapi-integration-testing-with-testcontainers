@@ -22,7 +22,7 @@ namespace ArbitraryApp.Server.IntegrationTests.Helpers;
 /// Entry point (generic type argument) is Program.cs 
 /// so that the test server will be set up similar as in production scenario
 /// 
-/// see http://www.tiernok.com/posts/2021/mocking-oidc-logins-for-integration-tests/
+/// see https://www.tiernok.com/posts/2021/mocking-oidc-logins-for-integration-tests/
 /// </summary>
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
