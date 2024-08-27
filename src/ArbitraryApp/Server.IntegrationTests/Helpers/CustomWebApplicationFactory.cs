@@ -16,6 +16,12 @@ using Testcontainers.MsSql;
 namespace ArbitraryApp.Server.IntegrationTests.Helpers;
 
 /// <summary>
+/// WebApplicationFactory<Program> is used to create an
+/// in-memory TestServer for the integration tests
+/// 
+/// Entry point (generic type argument) is Program.cs 
+/// so that the test server will be set up similar as in production scenario
+/// 
 /// see http://www.tiernok.com/posts/2021/mocking-oidc-logins-for-integration-tests/
 /// </summary>
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
@@ -39,7 +45,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
         string? role)
         where T : ImpersonatedAuthHandler
     {
-        // set base address to HTTPS
+        // Enforce HTTPS in integration tests
         options.BaseAddress = new Uri("https://localhost");
         return CreateLoggedInClient<T>(options, list =>
         {
